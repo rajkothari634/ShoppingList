@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ShopProject';
+  active = "Recipe";
+  onNavigate(activenow:string){
+    this.active=activenow;
+  }
 }
