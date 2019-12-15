@@ -11,11 +11,11 @@ export class RecipeListComponent implements OnInit {
   recipes: Recipe[] = [
     new Recipe('Test name',
     'test Description about the food',
-    'https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiK6ZqHnanmAhXcyjgGHajvBioQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fbeauty%2F&psig=AOvVaw0Ts4sWi4lKHGt4mC2qhtrt&ust=1576003590427231'
+    'https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&dpr=1&auto=format&fit=crop&w=416&h=312&q=60'
     ),
     new Recipe('Test name 2',
     'Test Description of second item of the food',
-    'link of the image')
+    'https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&dpr=1&auto=format&fit=crop&w=416&h=312&q=60')
   ];
   constructor() { }
   fillDetail(recipe : Recipe){
