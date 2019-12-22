@@ -9,4 +9,8 @@ export class HeaderComponent{
 openPage(page:string){
     this.pagedecider.emit(page);
 }
+dropdownState : boolean = false;
+changedropdownState(){
+this.dropdownState = !this.dropdownState;
+}
 }
