@@ -10,14 +10,17 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <div class="btn-group" 
-        appDropdown>
+        <div 
+        [ngClass] = "{
+        'dropdown open' : dropdownState
+        }"
+        class="btn-group">
             <button type="button" 
-            class="btn btn-primary dropdown-toggle">
+            class="btn btn-primary dropdown-toggle" (click) = "changedropdownState()">
              Manage Recipe <span class="caret"></span>
             </button>
                 <ul class="dropdown-menu">
-                    <li><a href="#">Add ingredient inlist</a></li>
+                    <li><a (click)="onAddToShoppingList()" style="cursor: pointer;" >Add ingredient inlist</a></li>
                     <li><a href="#">Edit Recipe</a></li>
                     <li><a href="#">Delete Recipe</a></li>
                 </ul>
@@ -31,6 +34,14 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        Indegredients
+        <hr>
+        <ul class="list-group">
+            <a  class="list-groupitem" 
+            style="cursor: pointer;"
+            *ngFor="let ingredient of detailRecipe.ingredients">
+            {{ingredient.name}} ({{ingredient.amount}})
+            <hr>
+        </a>
+        </ul>
     </div>
 </div>
