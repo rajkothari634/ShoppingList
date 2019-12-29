@@ -5,9 +5,13 @@
     </div>
     <ul class="nav navbar-nav">
      
-      <li  routerLinkActive="active">
-        <a  routerLink="/recipes">
+      <li  routerLinkActive="active" *ngIf="isAuth">
+        <a  routerLink="/recipes" >
           Recipes</a>
+      </li>
+      <li  routerLinkActive="active" *ngIf="!isAuth">
+        <a  routerLink="/auth">
+          Authentication</a>
       </li>
       <li  routerLinkActive="active">
         <a  routerLink="/shoppinglist">
@@ -15,9 +19,12 @@
       </li>
     </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li *ngIf="isAuth">
+          <a style="cursor: pointer;" (click)="logout()">Logout</a>
+        </li>
       <li [ngClass] = "{
         'dropdown open' : dropdownState
-      }" class="dropdown">
+      }" class="dropdown" *ngIf="isAuth">
         <a class="dropdown-toggle" role="button" (click)="changedropdownState()">Manage
           <span class="caret"></span></a>
         <ul class="dropdown-menu">
